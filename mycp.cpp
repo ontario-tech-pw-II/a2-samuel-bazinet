@@ -4,9 +4,14 @@ int main(int argc, char const *argv[])
  	ofstream fout;
 	
 	// check if there are enough arguments
+	if (argc == 3) 	
+		// open the first file
+		fin.open(argv[1]);
+	} else {
+		cerr << "There are not enough arguments" << endl;
+		return 1;
+	}
 	
-	
-	// open the first file
  	
 	char c;
 
@@ -18,6 +23,7 @@ int main(int argc, char const *argv[])
  	
 
 	// open the second file
+	fout.open(argv[2]);
 	
  	if (fout.fail())
  	{
